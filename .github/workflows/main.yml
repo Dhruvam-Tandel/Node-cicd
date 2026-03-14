@@ -42,10 +42,10 @@ jobs:
         username: ubuntu
         key: ${{ secrets.EC2_SSH_KEY }}
         script: 
-          docker pull ${{ secrets.DOCKER_USERNAME }}/node-cicd
+          docker pull DOCKER_USERNAME/node-cicd
           docker stop nodeapp || true
           docker rm nodeapp || true
-          docker run -d -p 3000:3000 --name nodeapp ${{ secrets.DOCKER_USERNAME }}/node-cicd
-          
+          docker run -d -p 3000:3000 --name nodeapp DOCKER_USERNAME/node-cicd
+
           
           
